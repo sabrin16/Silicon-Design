@@ -31,7 +31,7 @@
 
 body {
     font-family: "Manrope", sans-serif;
-    line-height: 1.6;
+    line-height: 1.8;
     --background-color: var(--clr-bg);
     color: var(--clr-text-body);
   }
@@ -140,7 +140,7 @@ o1, u1 {
   height: var(--_h);
   display: inline-block;
 
-  input(type="checkbox"){
+  input[type="checkbox"]{
     width: 0;
     height: 0;
     opacity: 0;
@@ -151,6 +151,8 @@ o1, u1 {
     inset: 0;
     background-color: var(--clr-gray-600);
     border-radius: 100vw;
+
+    transition: all 250ms;
   }
 
   .slider::after {
@@ -163,38 +165,27 @@ o1, u1 {
     border-radius: 50%;
     background-color: #fff;
 
-    transition: all 250;
+    transition: all 250ms;
   }
 
-  input(type="checkbox"):checked - .slider::after {
+  input(type="checkbox"):checked - .slider::after*{
     left: calc(100% - var(--_h) + 2px);
   }
   input(type="checkbox"):checked - .slider {
-    background-color: var(--clr-primary);
+    background-color: var(--clrprimary);
   }
+}
 
 
 /* NAVBAR START */
 .main-nav {
   padding-block: 1rem;
-  position: relative;
-
+  position: absolute;
+  width: 100%;
+  top: 0;
 
 .skip-link{
 }
-
-
-
-
-
-
-
-
-
-
-
-  
-
   .container {
     position: relative;
   }
@@ -204,6 +195,19 @@ o1, u1 {
     align-items: center;
   }
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   .darkmode-toggle {
     position: absolute;
     right: 12rem;
@@ -211,9 +215,24 @@ o1, u1 {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    p {
+      color: var(--clr-text-navigation);
+      font-weight: 600;
+    }
   }
   .menu-btn {
     display: none;
+    background-color: transparent;
+    border: 0;
+    width: 50px;
+    aspect-ratio: 1;
+    padding: 5rem;
+    padding-right: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 9999;
   }
 
   .main-menu {
@@ -226,27 +245,118 @@ o1, u1 {
     color: var(--clr-text-navigation);
     text-decoration: none;
     font-weight: 600;
-  }
- 
-
-  display: inline-block;
-  padding: 1rem;
-  background-color: var(--clr-bg);
-  border: 1px solid var(--clr-primary);
-  border-radius: 0 1rem 1rem 0;
-  position: absolute;
-  left: -100vw;
-  top: 10rem;
-
-  transition: 300ms;
-
-  &:focus {
-    left:0;
+  
+   &:hover,
+   &:focus-visible {
+     color: var(--clr/primary);
+   }
   }
 
-.container {
-  display: flex;
-  align-items: center;
+
+  @media (width <= 992px) {
+    .menu-btn {
+      display: block;
+    }  
+    .container {
+      position: static;
+    }
+    .darkmode-toggle {
+      right: 8rem;
+    }
+    .main-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      flex-direction: column-reverse;
+      gap: 1rem;
+      padding-block: 2rem;
+      background-color: var(--clr-bg);
+
+      box-shadow: 0 5px #00000028;
+    }
+    .nav-link {
+      display: inline-block;
+      padding: 1rem;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .menu-btn[aria-expanded="true"] ~ .main-menu {
+      animation: openMenu 250ms forwards
+    }
+    .menu-btn[aria-expanded="false"] ~ .main-menu {
+      animation: closeMenu 250ms forwards
+    }
+
+  }
+
+  @media(width < 540px) {
+    .darkmode-toggle p {
+        right: 4rem;
+      }
+      position: absolute;
+      width: 1px; 
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border-width: 0;
+    }
 }
-}
+    
+  
+
+
 /* NAVBAR END */
+
+
+/* showcase START */
+.showcase {
+  padding-top: 6rem;
+  text-align: center;
+  background-color: var(--clr-bg);
+  background-image: linear-gradient(to top, rgb(99, 127, 241, 0.1), rgba(219, 70, 239, 0.05) 42%, rgb(241, 244, 253, 0.07) 83%);
+
+  .store-btn {
+    background-color: #333;
+    width: 100%;
+  }
+
+
+  .phone-img-container {
+    display: none;
+
+  }
+}
+/* showcase END */
+
+
+
+/* Antimations */
+
+@keyframes openMenu {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes closeMenu {
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+[]
+~

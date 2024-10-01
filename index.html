@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>silicon | Manage All Your Money in One App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />"
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="main-nav" aria-label="main navigation">
@@ -16,7 +18,6 @@
           </a>
            
       
-          
           <div class="darkmode-toggle">
             <p>Dark Mode</p>
             <label class="toggle">
@@ -30,7 +31,7 @@
           </button>
       
       
-          <ul id="main-menu" class="main-menu">
+          <ul id="main-menu" class="main-menu" hide>
             <li>
               <a href="#" class="nav-link">features</a>
             </li>
@@ -45,8 +46,39 @@
         </div>
       </nav>
       
-      <main id="main"></main>
+  <main id="main"></main>
+
+    <section aria-label="showcase" class="showcase">
+      <div class="container space-y-3">
+        <h1 class="d4">Manage All Your Money in One App</h1>
+        </div class="content">
+         <p class="text-lg">We offer you a new generation of the mobile banking. 
+           Save, spend & manage money in your pocket.</p>
+         <div class="market-btns">
+          <a href="#" class="store-btn">
+            <img src="/images/icons/appstore-light.svg" alt="">
+          </a>
+          <a href="#" class="store-btn"></a>
+            <img src="/images/icons/google-light.svg" alt="">
+          </a>
+        </div>
+
+        </div class="more">
+           <a href="#features"> class="btn-round btn-white">
+            <i class="fa-solid fa-chevron-down"></i>
+           </a>
+           <span>Discover more</span>
+         </div>
+       </div>
+       <div class="phone-img-container">
+         <img src="/images/iphones.png" alt="two iphones with charts and a creditcard on the screen">
+       </div>
+      </div>
+    </section>
+
+  </main>
       
-      </body>
+
+  <script src="script.js"></script>
 </body>
 </html>
