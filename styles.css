@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+
+/*  ~ [] {}  */
 :root {
 --clr-grey-100: #F3F6FF;  
 --clr-grey-200: #EFF2FC;
@@ -19,10 +21,13 @@
 --clr-text-heading: var(--clr-gray-900);
 --clr-text-navigation: var(--clr-gray-800);
 
+--white-to-gray: #fff;
+
 --br-m: 0.375em;
 --br-1: 0.5em;
-}
 
+--section-spacing: 4rem;
+}
 *, *::after, *::before {
  box-sizing: border-box;
  padding: 0;
@@ -117,6 +122,29 @@ o1, u1 {
     height: 1.5em;
   }
 }
+.btn-round {
+  display: flex;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.btn-white {
+  background-color: var(--white-to-gray);
+  color: var(--clr-text-navigation);
+
+  box-shadow: 0 0 10px #00000022, 0 5px 5px #0000001f;
+
+  &:hover,
+  &:focus-visible {
+    background-color: hs1(from var(--white-to-gray) h s calc(1 - 10)); 
+  }
+}
 .btn-primary {
   background-color: var(--clr-primary);
   color: #fff; 
@@ -168,13 +196,14 @@ o1, u1 {
     transition: all 250ms;
   }
 
-  input(type="checkbox"):checked - .slider::after*{
+  input[type="checkbox"]:checked ~ .slider::after*{
     left: calc(100% - var(--_h) + 2px);
   }
-  input(type="checkbox"):checked - .slider {
-    background-color: var(--clrprimary);
+  input[type="checkbox"]:checked ~ .slider {
+    background-color: var(--clr-primary);
   }
 }
+
 
 
 /* NAVBAR START */
@@ -253,6 +282,8 @@ o1, u1 {
   }
 
 
+  
+  
   @media (width <= 992px) {
     .menu-btn {
       display: block;
@@ -271,6 +302,7 @@ o1, u1 {
       gap: 1rem;
       padding-block: 2rem;
       background-color: var(--clr-bg);
+      z-index: 1000;
 
       box-shadow: 0 5px #00000028;
     }
@@ -309,31 +341,118 @@ o1, u1 {
 }
     
   
-
-
 /* NAVBAR END */
 
 
 /* showcase START */
 .showcase {
   padding-top: 6rem;
+  /* padding-bottom: 4rem; */
   text-align: center;
   background-color: var(--clr-bg);
   background-image: linear-gradient(to top, rgb(99, 127, 241, 0.1), rgba(219, 70, 239, 0.05) 42%, rgb(241, 244, 253, 0.07) 83%);
 
-  .store-btn {
-    background-color: #333;
-    width: 100%;
+
+  .content {
+    padding-bottom: 3rem;
+  } 
+  
+  market-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
+  .store-btn {
+    background-color: var(--clr-gray-900);
+    width: 100%;
+    padding: .5em 1em;
+    border-radius: var(--br-1);
+
+    img {
+      height: 3em;
+    }
+  }
+
+  .more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
 
   .phone-img-container {
     display: none;
 
   }
+
+
+@media (width > 768px) {
+  .container {
+    position: relative;
+  }
+  .content {
+    width: 45%;
+    text-align: start;
+    margin-top: 5rem;
+  }
+
+  .market-btn {
+    flex-direction: row;
+  }
+
+  .store-btn {
+  padding: 0 1em;
+  }
+ .more {
+  justify-content: flex-start;
+  }
+  .phone-img-container {
+    display: block;
+    width: 60%;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media (width > 992px) {
+  .store-btn {
+    padding: .3em 2em;
+   }
+   .more {
+    margin-top: 11rem;
+   }
+}
+@media (width > 1200px) {
+  padding-top: 10rem;
+  text-align: start;
+
+  h1 {
+    width: 50%;
+  }
+  .content {
+    width: 40;
+    margin-top: 2rem;
+  }
+  .more {
+    margin-top: 13rem;
+  }
+}
+@media (width > 1400px) {
+  padding-top: 15rem;
+  .more {
+    margin-top: 15rem;
+  }
+}
+
 }
 /* showcase END */
 
+/* LOGOS START */
+
+/* LOGOS END */
 
 
 /* Antimations */
@@ -358,5 +477,3 @@ o1, u1 {
     opacity: 0;
   }
 }
-[]
-~
