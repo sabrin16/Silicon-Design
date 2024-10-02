@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
-
 /*  ~ [] {}  */
 :root {
 --clr-grey-100: #F3F6FF;  
@@ -20,6 +18,8 @@
 --clr-text-body: var(--clr-gray-700);
 --clr-text-heading: var(--clr-gray-900);
 --clr-text-navigation: var(--clr-gray-800);
+
+--clr-logo-bg: #6366F1;
 
 --white-to-gray: #fff;
 
@@ -99,8 +99,15 @@ o1, u1 {
   white-space: nowrap;
   border-width: 0;
 }
+.h1 {
+  font-size: 2.5rem;
+  color: var(--clr-text-heading);
+  font-weight: 800;
+}
 .d4 {
   font-size: 3.5rem;
+  color: var(--clr-text-heading);
+  font-weight: 800;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -203,8 +210,6 @@ o1, u1 {
     background-color: var(--clr-primary);
   }
 }
-
-
 
 /* NAVBAR START */
 .main-nav {
@@ -344,7 +349,7 @@ o1, u1 {
 /* NAVBAR END */
 
 
-/* showcase START */
+/* SHOWCASE START */
 .showcase {
   padding-top: 6rem;
   /* padding-bottom: 4rem; */
@@ -448,10 +453,45 @@ o1, u1 {
 }
 
 }
-/* showcase END */
+/* SHOWCASE END */
 
 /* LOGOS START */
+.logos {
+  display: none;
+  padding-block: var(--section-spacing);
 
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .logo-card {
+    width: 100%;
+    border: 1px solid var(--clr-gray-300);
+    padding: 2rem;
+    border-radius: var(--br-1);
+    display: grid;
+    place-items: center;
+  }
+
+  @media (width > 768px) {
+    display: block;
+
+    .logo-card:nth-last-of-type(-n+2) {
+      display: none;
+    }
+  }
+  @media (width > 1200px) {
+    .container {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .logo-card:nth-last-of-type(-n+2) {
+      display: block;
+    }
+  }
+}
 /* LOGOS END */
 
 
