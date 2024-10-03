@@ -14,12 +14,13 @@
 --clr-primary: #6366F1;
 
 --clr-bg: #fff;
---clr-bg-100: var(--clr-bg-100);
+--clr-bg-100: var(--clr-gray-100);
 --clr-text-body: var(--clr-gray-700);
 --clr-text-heading: var(--clr-gray-900);
 --clr-text-navigation: var(--clr-gray-800);
+--clr-market-btn: var(--clr-gray-900);
 
---clr-logo-bg: #6366F1;
+--clr-logo-bg: #f3f6ff;
 
 --white-to-gray: #fff;
 
@@ -28,12 +29,34 @@
 
 --section-spacing: 4rem;
 }
+.dark {
+  --clr-bg: var(--clr-gray-900);
+--clr-bg-100: rgba(255, 255, 255, 0.04);
+--clr-text-body: rgba(255, 255, 255, 0.7);
+--clr-text-heading: #ffffff;
+--clr-text-navigation: #ffffff;
+--clr-logo-bg: rgba(99, 101, 241, 0.08);
+--white-to-gray: rgba(255, 255, 255, 0.05);
+--clr-market-btn: var(--clr-gray100);
+
+  color-scheme: dark;
+
+  .show-light { display: none; }
+  .show-dark { display: block;}
+}
+
+.show-light { display: block; }
+  .show-dark { display: none;}
+
 *, *::after, *::before {
  box-sizing: border-box;
  padding: 0;
  margin: 0;
 }
 
+html {
+  color-scheme: light;
+}
 body {
     font-family: "Manrope", sans-serif;
     line-height: 1.8;
@@ -57,6 +80,7 @@ o1, u1 {
   list-style: none;
 }
 
+
 /* UTILITY CLASSES */
 .container {
   width: 100%;
@@ -78,6 +102,9 @@ o1, u1 {
   @media (width > 1400px) {
     max-width: 1320px;
   }
+}
+.space-y-1 > * + * {
+  margin-top: 1rem;
 }
 .space-y-2 > * + * {
   margin-top: 2rem;
@@ -101,6 +128,16 @@ o1, u1 {
 }
 .h1 {
   font-size: 2.5rem;
+  color: var(--clr-text-heading);
+  font-weight: 800;
+}
+.h4 {
+  font-size: 1.5rem;
+  color: var(--clr-text-heading);
+  font-weight: 800;
+}
+.h5{
+  font-size: 1.25rem;
   color: var(--clr-text-heading);
   font-weight: 800;
 }
@@ -210,6 +247,8 @@ o1, u1 {
     background-color: var(--clr-primary);
   }
 }
+
+
 
 /* NAVBAR START */
 .main-nav {
@@ -345,9 +384,8 @@ o1, u1 {
     }
 }
     
-  
-/* NAVBAR END */
 
+/* NAVBAR END */
 
 /* SHOWCASE START */
 .showcase {
@@ -356,7 +394,6 @@ o1, u1 {
   text-align: center;
   background-color: var(--clr-bg);
   background-image: linear-gradient(to top, rgb(99, 127, 241, 0.1), rgba(219, 70, 239, 0.05) 42%, rgb(241, 244, 253, 0.07) 83%);
-
 
   .content {
     padding-bottom: 3rem;
@@ -369,7 +406,7 @@ o1, u1 {
   }
 
   .store-btn {
-    background-color: var(--clr-gray-900);
+    background-color: var(--clr-market-btn);
     width: 100%;
     padding: .5em 1em;
     border-radius: var(--br-1);
@@ -421,7 +458,6 @@ o1, u1 {
     right: 0;
   }
 }
-
 @media (width > 992px) {
   .store-btn {
     padding: .3em 2em;
@@ -450,6 +486,9 @@ o1, u1 {
   .more {
     margin-top: 15rem;
   }
+ .store-btn {
+  padding: .7em 2em;
+ }
 }
 
 }
@@ -493,6 +532,86 @@ o1, u1 {
   }
 }
 /* LOGOS END */
+
+/* FEATURES START */
+.Features {
+  text-align: center;
+  padding-block: var(--section-spacing);
+
+  .iphone {
+    display: none;
+  }
+
+  .Features-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .Features-card {
+    display: flex;
+    text-align: start;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .icon-container {
+    background-color: var(--clr/logo/bg);
+    padding: 1rem;
+    border-radius: var(--br-1);
+    flex-shrink: 0;
+  }
+
+  @media (width > 768px) {
+    .Features-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem 3rem;
+    }
+  }
+  @media (width > 1200px) {
+    text-align: start;
+    .container {
+      display: flex;
+      gap: 4rem;
+    }
+    .iphone {
+      display: block;
+    }
+    .text {
+      flex: 1;
+
+    }
+  }
+  @media (width > 1400px) {
+    .container {
+      gap: 10rem;
+    }
+  }
+}
+/* FEATURES END */
+
+/* CAROUSEL START */
+.carousel-section {
+  padding-block: var(var(--section-spacing));
+  background-color: var(--clr-bg/100);
+  text-align: center;
+
+
+  .carousel {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+.text {
+  max-width: 80ch;
+  margin-inline: auto;
+}
+  @media (width < 768px) {
+    .carousel-item:first-of-type,
+    .carousel-item:last-of-type {
+      display: block;
+    }
+  }
+}
+/* CAROUSEL END */
 
 
 /* Antimations */
