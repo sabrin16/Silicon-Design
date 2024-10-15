@@ -66,10 +66,7 @@ body {
     color: var(--clr-text-body);
 }
 
-img {
-  display: block;
-  width: 100%;
-}
+
 
 
 input, button, textarea, select {
@@ -271,8 +268,6 @@ o1, u1 {
     background-color: var(--clr-primary);
   }
 }
-
-
 
 /* NAVBAR START */
 .main-nav {
@@ -649,7 +644,6 @@ o1, u1 {
 }
 /* CAROUSEL END */
 
-
 /* Antimations */
 
 @keyframes openMenu {
@@ -672,3 +666,341 @@ o1, u1 {
     opacity: 0;
   }
 }
+  
+  /* Section for "Make your money" */
+  section.make-money {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: var(--clr-bg);
+
+    .make-money-info h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      
+      .make-money-info div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+      
+      .make-money-info img {
+        vertical-align: middle;
+      }
+      
+      .make-money-info span {
+        font-size: 1rem;
+        color: #666;
+        margin-left: 10px;
+      }
+
+      .make-money-img img {
+        max-width: 100%;
+        height: auto;
+      }
+  }
+  
+  /* Style for the button */
+  button.learn-more {
+    background-color: var(--clr-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  .learn-more:hover {
+    background-color: hsl(from var(--clr-primary) h s calc(1 - 10));
+  }
+  
+  button.learn-more img {
+    margin-left: 10px;
+  }
+  
+  
+ /* Receive section */
+.recieve-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: var(--clr-bg);
+}
+
+.recieve-info-container {
+    display: flex;
+}
+.recieve-info-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.recieve-info h2 {
+  margin-bottom: 20px;
+  font-size: 2.1rem;
+}
+
+.recieve-info p {
+  margin-bottom: 10px;
+}
+
+
+.recieve-info .learn-more img {
+  margin-left: 10px;
+}
+
+
+/* Testimonials Section */
+.testimonials {
+    text-align: left;
+    padding: 44px;
+    display: flex;
+    background-color: var(--clr-bg-100);
+}
+
+.testimonial-item {
+    margin: 20px 24px;
+    padding: 20px;
+    background-color: var(--clr-bg);
+    border-radius: 8px;
+    display: inline-block;
+    width: 416px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.testimonial-item-quotes{
+    position: absolute;
+    left: 24px;
+    top: -24px;
+}
+
+.author {
+    margin-top: 10px;
+    display: flex;
+
+}
+
+.author-info  {
+    text-align: left;
+}
+
+.author-name {
+    font-weight: bold;
+    
+}
+
+.author-role {
+    color: var(--clr-gray-600);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 122px 0;
+    max-width: 1200px;
+    margin: 0 44px;
+    display: flex;
+}
+
+.faq-info {
+    width: 41.66%;
+}
+.faq-info h2 {
+  color: var(--clr-gray-900);
+  margin-bottom: 20px;
+}
+
+.faq-info> p {
+  color: var(--clr-gray-700);
+  margin-bottom: 20px;;
+}
+
+.faqBtn {
+  border-radius: 50%;
+  border: none;
+  aspect-ratio: 1;
+}
+.faqBtn:active {
+  background-color: var(--clr-primary);
+  
+}
+.contact-options {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.contact-box {
+    padding: 20px;
+    border-radius: 8px;
+    border: solid 1px var(--clr-gray-300);
+    text-align: start;
+    width: 196px;
+    height: 166px;
+    
+}
+
+.contact-box-phone {
+    color: var(--clr-success);
+}
+
+.contact-box-msg {
+    color: purple;
+}
+#msg {
+    color: #22C55E;
+    text-decoration: none;
+}
+
+#phone {
+    color: var(--clr-primary);
+    text-decoration: none;
+}
+
+
+.faq-list {
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+
+
+.accordion .container {
+  position: relative;
+  margin: 10px 10px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(30, 25, 25, 0.5);
+  border: 1px solid #2e2e2e2d;
+  
+}
+.accordion-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion .label {
+  position: relative;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+
+.accordion .content {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 15px 0;
+  border-radius: 8px;
+  height: 0;
+}
+
+
+.accordion .container.active .content {
+  height: 150px;
+}
+
+.accordion .container.active .label::before {
+  content: '';
+}
+
+.faq-item-row1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-item h4 {
+    color: var(--clr-gray-900);
+    margin-bottom: 10px;
+}
+
+.faq-dropdownTab-down {
+  background-color: var(--clr-logo-bg);
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.faq-dropdownTab-up {
+  background-color: var(--clr-primary);
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+
+/* Subscribe Section */
+.subscribe {
+    padding: 30px;
+    background-color: var(--clr-bg-100);
+    border-radius: 8px;
+    margin: 20px 50px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 222px;
+}
+
+#subscribe-title {
+  max-width: 416px;
+  flex-grow: 2;
+}
+.subscribe form {
+    display: inline-block;
+    margin-top: 10px;
+    flex-grow: 4;
+}
+
+.subscribe input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--clr-gray-500);
+    outline: none;
+    border-radius: 8px;
+}
+
+.subscribe button {
+    background-color: var(--clr-primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+
+.license{
+  text-align: center;
+  color: var(--clr-gray-600);
+  font-size: 0.8rem;
+}   

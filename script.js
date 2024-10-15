@@ -50,3 +50,18 @@ function disableDarkMode(){
 
 
 
+
+
+const upDropDN = document.querySelector('.faq-dropdownTab-up')
+const accsth = document.getElementsByClassName('faq-dropdownTab-down')
+//const acc = document.getElementsByClassName('accordion')
+
+const accordion = document.getElementsByClassName('container');
+
+for (i=0; i<accordion.length; i++) {
+  accordion[i].addEventListener('click', function () {
+    this.classList.toggle('active')
+  })
+}
+
+
